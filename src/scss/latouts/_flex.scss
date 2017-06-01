@@ -1,0 +1,84 @@
+$flex--column-center---height: 100% !default;
+$class-slug: col !default;
+$col--columns: 12 !default;
+$col--gutter: 1/6 !default;
+
+%default--flex-row {
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.flex {
+	@extend %default--flex-row;
+	display: flex;
+}
+
+/// generating columns
+@for $i from 1 through ($col--columns - 1) {
+	.#{$class-slug}-#{$i} {
+		width: #{(((100/($col--columns)*$i)*1%))};
+	}
+}
+
+[data-collapse="hide-desktop"] {
+	display: none;
+}
+
+@include media-query('tablet-min') {
+
+	[data-collapse="collapse-tablet"] {
+		order: initial;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		width: auto !important;
+		height: auto !important;
+		margin-right: auto;
+		&[class*="col-"] {
+			width: 100% !important;
+		}
+	}
+
+
+	[data-collapse="hide-tablet"] {
+		display: none !important;
+
+	}
+
+	[data-collapse="hide-desktop"].flex {
+		display: flex;
+	}
+
+	[data-collapse="hide-desktop"] {
+		display: block;
+	}
+}
+
+@include media-query('mobile') {
+	[data-collapse="collapse-mobile"] {
+		order: initial;
+		flex-direction: column;
+		text-align: center;
+		width: 100% !important;
+		height: auto !important;
+		margin-right: 0;
+		padding-left: 0;
+		padding-right: 0;
+		&[class*="col-"] {
+			width: 100% !important;
+		}
+	}
+
+	[data-collapse="hide-mobile"] {
+		display: none !important;
+	}
+
+	[data-collapse="hide-desktop"].flex {
+		display: flex;
+	}
+
+	[data-collapse="hide-desktop"] {
+		display: block;
+	}
+}
+
