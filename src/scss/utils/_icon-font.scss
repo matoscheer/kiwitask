@@ -1,0 +1,41 @@
+$ico_before--map: () !default;
+%ico_before-defaults {
+	font-family: "kiwitask" !important;
+	font-style: normal !important;
+	font-weight: normal !important;
+	font-variant: normal !important;
+	text-transform: none !important;
+	speak: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	@include expand-list-map($ico_before--map)
+}
+
+
+@charset "UTF-8";
+
+/* kiwitask */
+@font-face {
+	font-family: "kiwitask";
+	src:url("https://file.myfontastic.com/VAefnCtRCNj2uPJnAWxoRM/fonts/1496322723.eot");
+	src:url("https://file.myfontastic.com/VAefnCtRCNj2uPJnAWxoRM/fonts/1496322723.eot?#iefix") format("embedded-opentype"),
+	url("https://file.myfontastic.com/VAefnCtRCNj2uPJnAWxoRM/fonts/1496322723.woff") format("woff"),
+	url("https://file.myfontastic.com/VAefnCtRCNj2uPJnAWxoRM/fonts/1496322723.ttf") format("truetype"),
+	url("https://file.myfontastic.com/VAefnCtRCNj2uPJnAWxoRM/fonts/1496322723.svg#1496322723") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+[data-icon]:before {
+	content: attr(data-icon);
+	@extend %ico_before-defaults;
+
+}
+
+[class^="ico-"]:before,
+[class*=" ico-"]:before {
+	@extend %ico_before-defaults;
+}
+
+@import "icons";

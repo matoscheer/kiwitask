@@ -1,0 +1,29 @@
+
+@include media-query('collapse') {
+
+	[class*="col-margin-"] {
+		width: auto !important;
+		margin-right: gutter($col--gutter) !important;
+		margin-left: gutter($col--gutter) !important;
+		flex-grow: 1;
+	}
+
+	.flex {
+		justify-content: center !important;
+	}
+
+	.title {
+		text-align: center;
+	}
+
+}
+
+
+@include media-query('tablet-min') {
+
+	html {
+		font-size: 14px;
+	}
+
+}
+

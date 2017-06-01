@@ -1,0 +1,13 @@
+.input-group {
+	justify-content: space-between;
+
+	input[type="text"] {
+		margin-bottom: gutter(1/3);
+		box-shadow: 0 0 2px rgba(0,0,0,.25) inset;
+		border-radius: $border-radius;
+		padding: 15px;
+		box-sizing: border-box;
+		border: 1px solid $brand-color;
+	}
+
+}

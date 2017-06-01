@@ -1,0 +1,27 @@
+.btn {
+	border: 1px solid $brand-color;
+	padding: 7px 15px;
+
+	border-radius: $border-radius;
+
+	&:hover {
+		color: $brand-color-hover;
+		border-bottom-color: $brand-color-hover;
+	}
+
+	&.menu-item {
+		margin: 0 7px;
+	}
+
+}
+
+.btn-filled {
+	color: #fff;
+	background: $brand-color;
+
+	&:hover {
+		color: #fff;
+		background: $brand-color-hover;
+	}
+
+}

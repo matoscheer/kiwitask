@@ -1,14 +1,17 @@
-$breakpoints: (
-		mobile: 480px,
-		tablet-min: 767px,
-		collapse: 992px,
-		tablet-max: 1025px,
-) !default;
-
 @mixin media-query($breakpoint) {
 	@if(map_has_key($breakpoints, $breakpoint)) {
 		@media screen and (max-width: #{map_get($breakpoints, $breakpoint)}) {
 			@content;
+		}
+	}
+}
+
+
+
+@mixin expand-list-map($map) {
+	@if(length($map) > 0) {
+		@each $property, $value in $map {
+			#{$property}: #{$value};
 		}
 	}
 }

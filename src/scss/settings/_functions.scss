@@ -1,0 +1,7 @@
+@function gutter($gutter) {
+	@return ((100/$col--columns)*($gutter))*1%;
+}
+
+@function span($columns) {
+	@return ((100/10 * $columns) - $col--margin-right)*1%;
+}

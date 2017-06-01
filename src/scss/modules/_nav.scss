@@ -2,3 +2,10 @@
 	align-items: center;
 	justify-content: flex-end;
 }
+
+.nav-filter {
+	padding : 0 0 gutter(1/5) 0;
+	justify-content: space-between;
+	margin-bottom: gutter(1/2);
+	border-bottom: 1px solid rgba($brand-color, .5);
+}

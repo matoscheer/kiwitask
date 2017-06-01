@@ -1,6 +1,25 @@
-.menu-item {
-	padding: 0 15px;
-	font-weight: $font-medium;
-	color: $brand-color;
+%nav-items-defaults {
 	text-decoration: none;
+	font-weight: $font-medium;
+}
+
+.menu-item {
+	@extend %nav-items-defaults;
+	color: $brand-color;
+	padding: 0 15px;
+
+	&:hover {
+		color: $brand-color-hover;
+	}
+}
+
+.tab-item {
+	@extend %nav-items-defaults;
+	padding: 0 gutter(1/2) 0 0;
+	white-space: nowrap;
+	color: lighten($text-color, 30%);
+	font-size: #{(13/$font-base-size)}rem;
+	&.active {
+		color: $text-color;
+	}
 }

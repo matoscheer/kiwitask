@@ -1,0 +1,44 @@
+
+// colors
+$brand-color: #339ecd;
+$brand-color-hover: darken(#339ecd, 20%);
+$text-color: #333;
+
+//font styles
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500');
+$font-family:  'Roboto', sans-serif;
+$font-base-size: 16;
+$font-size: 1rem;
+$font-normal: 400;
+$font-medium: 500;
+$line-height: 1.42em;
+
+//global
+$header-height: 60px;
+$border-radius: 3px;
+
+//grid
+$flex--column-center---height: 100%;
+$class-slug: col;
+$class-slug-margin: col-margin;
+$col--columns: 12;
+$col--gutter: 1/6;
+$col--margin-right: ((100/$col--columns)*($col--gutter));
+
+
+
+//icons
+@import "functions";
+
+$ico_before--map: (
+	vertical-align: middle,
+	padding-right: gutter(1),
+);
+
+//responsive
+$breakpoints: (
+	mobile: 496px,
+	tablet-min: 767px,
+	collapse: 992px,
+	tablet-max: 1025px,
+)

@@ -1,0 +1,27 @@
+p {
+	color: $text-color;
+	font-size: #{(14/$font-base-size)}rem;
+}
+
+a {
+	color: $brand-color;
+	text-decoration: none;
+	transition: all 0.3s ease 0s;
+
+	&:hover {
+		color: darken($brand-color, 20%);
+	}
+
+}
+
+.title {
+	font-size: #{(22/$font-base-size)}rem;
+	font-weight: $font-normal;
+	color: lighten($text-color,20%);
+
+	strong {
+		font-weight: $font-medium;
+		color: $text-color;
+	}
+
+}

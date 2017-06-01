@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "gulp": "~3.9.1",
+    "gulp-minify-css": "",
+    "gulp-util": "",
+    "gulp-rename": "",
+    "gulp-sass": "",
+    "gulp-autoprefixer": "",
+    "angular": "~1.6.4"
+  }
+}
