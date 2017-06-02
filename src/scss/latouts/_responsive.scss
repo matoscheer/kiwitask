@@ -16,6 +16,14 @@
 		text-align: center;
 	}
 
+	.serch-results {
+		&> div,
+		&>img {
+			margin: 15px 30px;
+		}
+	}
+
+
 }
 
 

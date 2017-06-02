@@ -18,6 +18,7 @@ a {
 	font-size: #{(22/$font-base-size)}rem;
 	font-weight: $font-normal;
 	color: lighten($text-color,20%);
+	margin-bottom: 30px;
 
 	strong {
 		font-weight: $font-medium;

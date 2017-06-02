@@ -7,17 +7,17 @@
   font-variant: normal !important;
   text-transform: none !important;
   speak: none;
-  line-height: 1;
+  line-height: inherit;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   vertical-align: middle;
-  padding-right: 8.33333%; }
+  padding-right: 3px; }
 
 /* kiwitask */
 @font-face {
   font-family: "kiwitask";
-  src: url("https://file.myfontastic.com/VAefnCtRCNj2uPJnAWxoRM/fonts/1496322723.eot");
-  src: url("https://file.myfontastic.com/VAefnCtRCNj2uPJnAWxoRM/fonts/1496322723.eot?#iefix") format("embedded-opentype"), url("https://file.myfontastic.com/VAefnCtRCNj2uPJnAWxoRM/fonts/1496322723.woff") format("woff"), url("https://file.myfontastic.com/VAefnCtRCNj2uPJnAWxoRM/fonts/1496322723.ttf") format("truetype"), url("https://file.myfontastic.com/VAefnCtRCNj2uPJnAWxoRM/fonts/1496322723.svg#1496322723") format("svg");
+  src: url("https://file.myfontastic.com/VAefnCtRCNj2uPJnAWxoRM/fonts/1496422681.eot");
+  src: url("https://file.myfontastic.com/VAefnCtRCNj2uPJnAWxoRM/fonts/1496422681.eot?#iefix") format("embedded-opentype"), url("https://file.myfontastic.com/VAefnCtRCNj2uPJnAWxoRM/fonts/1496422681.woff") format("woff"), url("https://file.myfontastic.com/VAefnCtRCNj2uPJnAWxoRM/fonts/1496422681.ttf") format("truetype"), url("https://file.myfontastic.com/VAefnCtRCNj2uPJnAWxoRM/fonts/1496422681.svg#1496422681") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -41,6 +41,9 @@
 
 .ico-arrow-graph-up-right:before {
   content: "\66"; }
+
+.ico-clock:before {
+  content: "\67"; }
 
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -144,6 +147,33 @@ body {
 
 .results {
   padding: 60px 0; }
+
+.serch-results {
+  padding: 30px;
+  border: 1px solid #339ecd;
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.3s ease 0s; }
+  .serch-results small {
+    color: #666666;
+    font-size: 0.8125rem; }
+  .serch-results .time {
+    color: #339ecd; }
+  .serch-results:hover {
+    box-shadow: 0 0 20px -5px rgba(0, 0, 0, 0.75); }
+
+.result-price {
+  color: #fff;
+  background-color: #33cda5;
+  padding: 7px 15px;
+  border-radius: 3px;
+  font-weight: 500;
+  font-size: 1.125rem; }
 
 .flex {
   flex-direction: row;
@@ -385,13 +415,34 @@ body {
 
 .input-group {
   justify-content: space-between; }
-  .input-group input[type="text"] {
+  .input-group .input {
     margin-bottom: 2.77778%;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.25) inset;
     border-radius: 3px;
-    padding: 15px;
+    height: 54px;
     box-sizing: border-box;
-    border: 1px solid #339ecd; }
+    border: 1px solid #339ecd;
+    display: flex;
+    position: relative; }
+  .input-group .input-label {
+    padding: 0 15px 0 7px;
+    height: 52px;
+    line-height: 54px;
+    display: inline-flex;
+    flex-grow: 1; }
+    .input-group .input-label:before {
+      color: #339ecd; }
+    .input-group .input-label > span {
+      padding-left: 5px; }
+  .input-group .input-field {
+    flex-grow: 11;
+    border: none;
+    padding: 0 15px;
+    width: 20%; }
+  .input-group .select-field {
+    background: #fff; }
+    .input-group .select-field option {
+      padding: 15px 0; }
 
 p {
   color: #333;
@@ -407,10 +458,17 @@ a {
 .title {
   font-size: 1.375rem;
   font-weight: 400;
-  color: #666666; }
+  color: #666666;
+  margin-bottom: 30px; }
   .title strong {
     font-weight: 500;
     color: #333; }
+
+.deg45::before {
+  transform: rotate(45deg); }
+
+.deg225::before {
+  transform: rotate(225deg); }
 
 @media screen and (max-width: 992px) {
   [class*="col-margin-"] {
@@ -421,7 +479,10 @@ a {
   .flex {
     justify-content: center !important; }
   .title {
-    text-align: center; } }
+    text-align: center; }
+  .serch-results > div,
+  .serch-results > img {
+    margin: 15px 30px; } }
 
 @media screen and (max-width: 767px) {
   html {

@@ -18,5 +18,16 @@
 @import "elements/btn";
 @import "elements/inputs";
 @import "elements/typo";
+.deg45::before {
+	transform: rotate(45deg);
+}
+
+.deg225::before {
+	transform: rotate(225deg);
+}
+
+
+
+
 //responsive
 @import "latouts/responsive";

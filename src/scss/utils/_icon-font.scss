@@ -6,7 +6,7 @@ $ico_before--map: () !default;
 	font-variant: normal !important;
 	text-transform: none !important;
 	speak: none;
-	line-height: 1;
+	line-height: inherit;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	@include expand-list-map($ico_before--map)
@@ -18,19 +18,27 @@ $ico_before--map: () !default;
 /* kiwitask */
 @font-face {
 	font-family: "kiwitask";
-	src:url("https://file.myfontastic.com/VAefnCtRCNj2uPJnAWxoRM/fonts/1496322723.eot");
-	src:url("https://file.myfontastic.com/VAefnCtRCNj2uPJnAWxoRM/fonts/1496322723.eot?#iefix") format("embedded-opentype"),
-	url("https://file.myfontastic.com/VAefnCtRCNj2uPJnAWxoRM/fonts/1496322723.woff") format("woff"),
-	url("https://file.myfontastic.com/VAefnCtRCNj2uPJnAWxoRM/fonts/1496322723.ttf") format("truetype"),
-	url("https://file.myfontastic.com/VAefnCtRCNj2uPJnAWxoRM/fonts/1496322723.svg#1496322723") format("svg");
+	src:url("https://file.myfontastic.com/VAefnCtRCNj2uPJnAWxoRM/fonts/1496422681.eot");
+	src:url("https://file.myfontastic.com/VAefnCtRCNj2uPJnAWxoRM/fonts/1496422681.eot?#iefix") format("embedded-opentype"),
+	url("https://file.myfontastic.com/VAefnCtRCNj2uPJnAWxoRM/fonts/1496422681.woff") format("woff"),
+	url("https://file.myfontastic.com/VAefnCtRCNj2uPJnAWxoRM/fonts/1496422681.ttf") format("truetype"),
+	url("https://file.myfontastic.com/VAefnCtRCNj2uPJnAWxoRM/fonts/1496422681.svg#1496422681") format("svg");
 	font-weight: normal;
 	font-style: normal;
 }
+
 
 [data-icon]:before {
 	content: attr(data-icon);
 	@extend %ico_before-defaults;
 
+}
+
+[class^="ico-"],
+[class*=" ico-"] {
+	&:before {
+		@extend %ico_before-defaults;
+	}
 }
 
 [class^="ico-"]:before,

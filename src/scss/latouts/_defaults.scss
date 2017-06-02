@@ -24,3 +24,38 @@ body {
 .results {
 	padding: 60px 0;
 }
+
+.serch-results {
+	padding: 30px;
+	border: 1px solid $brand-color;
+	width: 100%;
+	margin-bottom: 20px;
+	border-radius: $border-radius;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	cursor: pointer;
+	transition: all 0.3s ease 0s;
+	small {
+		color: lighten($text-color, 20%);
+		font-size: #{(13/$font-base-size)}rem;
+	}
+	.time {
+		color: $brand-color;
+	}
+
+	&:hover {
+		box-shadow: 0 0 20px -5px rgba(0,0,0,.75);
+	}
+
+}
+
+
+.result-price {
+	color: #fff;
+	background-color: $green-color;
+	padding: 7px 15px;
+	border-radius: $border-radius;
+	font-weight: $font-medium;
+	font-size: #{(18/$font-base-size)}rem;
+}

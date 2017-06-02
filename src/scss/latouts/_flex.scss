@@ -32,7 +32,7 @@
 		.flex-start & {
 			margin-right: #{(($col--margin-right + ($col--margin-right / (($col--columns/$i) - 1))))}#{'%'};
 		}
-
+		// @TODO labelo for odd columns
 		&:nth-child(#{$col--columns/$i}n) {
 			.flex-start & {
 				margin-right: 0;

@@ -6,8 +6,6 @@
 	}
 }
 
-
-
 @mixin expand-list-map($map) {
 	@if(length($map) > 0) {
 		@each $property, $value in $map {

@@ -2,6 +2,7 @@
 // colors
 $brand-color: #339ecd;
 $brand-color-hover: darken(#339ecd, 20%);
+$green-color: #33cda5;
 $text-color: #333;
 
 //font styles
@@ -32,7 +33,7 @@ $col--margin-right: ((100/$col--columns)*($col--gutter));
 
 $ico_before--map: (
 	vertical-align: middle,
-	padding-right: gutter(1),
+	padding-right: 3px,
 );
 
 //responsive

@@ -17,6 +17,11 @@
     <link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180x180.png" />
     <link href="css/screen.min.css" rel='stylesheet'>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/mustache.min.js"></script>
+    <script src="js/moments.min.js"></script>
+    <script src="js/app.js"></script>
+
 </head>
 <body>
 
@@ -43,24 +48,49 @@
                     <nav class="nav-filter flex" role="navigation">
 
                         <a class="tab-item ico-arrow-right-c active" href="#" role="tab" data-tab="">One-Way</a>
-                        <a class="tab-item ico-arrow-swap" href="#" role="tab" data-tab="">Return</a>
-                        <a class="tab-item ico-arrow-graph-up-right" href="#" role="tab" data-tab="">multicity</a>
-                        <a class="select-item ico-android-people" href="#" role="tab" data-tab="">Passanger</a>
+                        <a class="select-item ico-android-people" href="#" role="tab" data-tab="">1 Passanger</a>
 
                     </nav>
 
-                    <form>
-                        <div id="images"></div>
+                    <form id="one_way_form" autocomplete='off'>
 
                         <div class="input-group flex">
-                            <input type="text" placeholder="from" class="col-margin-6">
-                            <input type="text" placeholder="from" class="col-margin-6">
+                            <div class="input col-margin-6">
+                                <label for="from_place_input" class="ico-android-pin input-label"><span>From:</span></label>
+                                <input class="input-field" id="from_place_input" type="text" Placeholder="Prague" />
+                                <select class="select-field" id="from_place_select" style="display: none">
+                                    <option value="prague_cz" selected="selected">Prague</option>
+                                </select>
+                            </div>
+
+                            <div class="input col-margin-6">
+                                <label for="to_place_input" class="ico-android-pin input-label"><span>To:</span></label>
+                                <input class="input-field" id="to_place_input" type="text" placeholder="Bratislava" />
+                                <select class="select-field" id="to_place_select" style="display: none">
+                                    <option value="bratislava_sk" selected="selected">Bratislava</option>
+                                </select>
+                            </div>
+
                         </div>
 
                         <div class="input-group flex">
-                            <input type="text" placeholder="from" class="col-margin-6">
-                            <input type="text" placeholder="from" class="col-margin-6">
+                            <div class="input col-margin-6">
+                                <label class="ico-android-plane deg45 input-label" for="departure_from"><span>Departure from:</span></label>
+                                <input class="input-field" type="text" value="10/06/2017" id="departure_from" />
+                            </div>
+
+                            <div class="input col-margin-6">
+                                <label class="ico-android-plane deg225 input-label" for="departure_to"><span>Departure to:</span></label>
+                                <input class="input-field" type="text" value="20/06/2017" id="departure_to" />
+
+                            </div>
+
+
+
+
                         </div>
+
+                        <input type="submit" value="Submit" class="btn btn-filled"/>
 
                     </form>
 
@@ -76,9 +106,9 @@
 
             <div class="wrapper">
 
-                <h1 class="title"><strong>Top destinations</strong> for travellers near <strong>Bratislava</strong></h1>
+                <h1 class="title js-hidden"><strong>Top destinations</strong> for travellers near <strong>Bratislava</strong></h1>
 
-                <div class="result-items flex flex-start">
+                <div class="result-items flex flex-start js-hidden">
 
                     <div class="col-margin-3">
 
@@ -274,6 +304,12 @@
 
                 </div>
 
+
+
+
+                <div id="results" class="flex" style="display: none"></div>
+
+
             </div>
 
         </div>
@@ -281,5 +317,26 @@
 
     </div>
 
+
+
+<script id="template" type="x-tmpl-mustache">
+    <div class="js-results serch-results flex">
+        <div class="result-price">{{ price }} &euro;</div>
+        <img src="//images.kiwi.com/airlines/32/{{ airlines }}.png" alt="{{ airlines }}"/>
+        <div class="result-from">
+            <div class="dest ico-android-plane">{{ cityFrom }}<small>({{ flyFrom }})</small></div>
+            <div class="time">{{ dTime }}  <small>{{ dDate }}</small></div>
+        </div>
+        <div class="result-to">
+            <div class="dest ico-android-plane">{{ cityTo }}<small>({{ flyTo }})</small></div>
+            <div class="time">{{ aTime }} <small>{{ aDate }}</small></div>
+
+        </div>
+        <div class="result-duration">
+            <div class="ico-clock">{{ fly_duration }}</div>
+            <div><small>{{ distance }}km</small></div>
+        </div>
+    </div>
+</script>
+
 </body>
-<link href="" rel="stylesheet">
