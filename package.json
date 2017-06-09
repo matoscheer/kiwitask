@@ -4,8 +4,6 @@
     "gulp-minify-css": "",
     "gulp-util": "",
     "gulp-rename": "",
-    "gulp-sass": "",
-    "gulp-autoprefixer": "",
-    "angular": "~1.6.4"
+    "gulp-sass": ""
   }
 }
